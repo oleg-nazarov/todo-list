@@ -1,0 +1,7 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Oleg Nazarov <oleg.iaguzhinskii@gmail.com>",
+  "license": "MIT"
+}
