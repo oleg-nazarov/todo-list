@@ -2,6 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 
 render(
-    <div>Welcome to New-York)</div>,
-    document.getElementById('root')
+  <div>You gotta do what you gotta do</div>,
+  document.getElementById('root')
 );
