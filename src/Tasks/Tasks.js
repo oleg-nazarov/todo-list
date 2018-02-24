@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Tasks = () => (
-  <div>Tasks</div>
-);
+class Tasks extends Component {
+  render() {
+    const { list } = this.props;
+
+    return (
+      list.map(task => (
+        <div key={task.id}>
+          <span>{JSON.stringify(task.done)}</span>
+          <span>{task.description}</span>
+        </div>
+      ))
+    );
+  }
+}
 
 export default Tasks;
