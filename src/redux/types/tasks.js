@@ -1,0 +1,1 @@
+export const TASK_TOGGLE_DONE = 'TASK_TOGGLE_DONE';
