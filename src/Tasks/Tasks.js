@@ -14,11 +14,12 @@ class Tasks extends Component {
     return (
       _.map(list, (task, id) => (
         <div
+          className="row"
           key={id}
           onClick={this.handleTaskOnClick(id)}
         >
-          <span>{JSON.stringify(task.done)}</span>
-          <span>{task.description}</span>
+          <span className="col-2 text-center">{JSON.stringify(task.done)}</span>
+          <span className="col-10">{task.description}</span>
         </div>
       ))
     );
