@@ -2,10 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store/store';
+import App from './App';
 
 render(
   <Provider store={store}>
-    <div>You gotta do what you gotta do</div>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
