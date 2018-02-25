@@ -1,7 +1,7 @@
 import {
   TASK_TOGGLE_DONE,
   ADD_TASK,
-  DELETE_TASK
+  UPDATE_LIST
 } from '../types/tasks';
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
       description: 'Lorem ipsum dolores',
       done: false
     },
-    2: {
+    26: {
       description: 'Per aspera ad astra',
       done: true
     }
@@ -42,6 +42,12 @@ const tasks = (state = initialState, action) => {
             done: false
           }
         }
+      };
+
+    case UPDATE_LIST:
+      return {
+        ...state,
+        list: action.payload
       };
 
     default:

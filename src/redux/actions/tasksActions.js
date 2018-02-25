@@ -1,7 +1,7 @@
 import {
   TASK_TOGGLE_DONE,
   ADD_TASK,
-  DELETE_TASK
+  UPDATE_LIST
 } from '../types/tasks';
 
 export const taskToggleDone = id => ({
@@ -17,6 +17,7 @@ export const addTask = (id, description) => ({
   }
 });
 
-export const deleteTask = () => ({
-  type: DELETE_TASK
+export const updateList = list => ({
+  type: UPDATE_LIST,
+  payload: list
 });
