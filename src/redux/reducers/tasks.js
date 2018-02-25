@@ -1,4 +1,8 @@
-import { TASK_TOGGLE_DONE } from '../types/tasks';
+import {
+  TASK_TOGGLE_DONE,
+  ADD_TASK,
+  DELETE_TASK
+} from '../types/tasks';
 
 const initialState = {
   list: {
@@ -27,6 +31,19 @@ const tasks = (state = initialState, action) => {
           }
         }
       };
+
+    case ADD_TASK:
+      return {
+        ...state,
+        list: {
+          ...state.list,
+          [action.payload.id]: {
+            description: action.payload.description,
+            done: false
+          }
+        }
+      };
+
     default:
       return state;
   }
