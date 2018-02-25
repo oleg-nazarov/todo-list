@@ -18,15 +18,9 @@ class TaskCreatingPanel extends Component {
     const keys = Object.keys(list)
       .map(key => Number(key));
 
-    let firstId = keys.sort((a,b) => a > b)[0];
+    let lastId = keys.sort((a,b) => a < b)[0];
 
-    while(true) {
-      if (list[firstId + 1]) {
-        firstId = firstId + 1;
-      } else {
-        return firstId + 1;
-      }
-    }
+    return lastId + 1;
   }
 
   handleInputChange = (event) => {
