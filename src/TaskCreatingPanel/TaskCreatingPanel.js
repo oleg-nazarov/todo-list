@@ -85,7 +85,7 @@ class TaskCreatingPanel extends Component {
       <div className="panel">
         <div className="row d-flex align-items-center">
           <i
-            className="col-2 text-center material-icons"
+            className="col-2 text-center material-icons plus-icon"
             onClick={this.addTask}
           >add_box</i>
 

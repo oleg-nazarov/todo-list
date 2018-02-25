@@ -22,7 +22,7 @@ class Tasks extends Component {
           <i className="col-2 text-center align-self-start material-icons">
             {task.done ? `check_box`: `check_box_outline_blank`}
           </i>
-          <span className="col-10">{task.description}</span>
+          <span className={`col-10${task.done ? ' font-style-italic' : ''}`}>{task.description}</span>
         </div>
       ))
     );

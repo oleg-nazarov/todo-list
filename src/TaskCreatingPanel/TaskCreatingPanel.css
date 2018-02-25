@@ -6,3 +6,7 @@
     height: 18vh;
     width: 62vw;
 }
+
+.plus-icon {
+    cursor: pointer;
+}
