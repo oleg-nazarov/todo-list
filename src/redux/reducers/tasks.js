@@ -35,9 +35,12 @@ const tasks = (state = initialState, action) => {
     case ADD_TASK:
       return {
         ...state,
-        [action.payload.id]: {
-          description: action.payload.description,
-          done: false
+        list: {
+          ...state.list,
+          [action.payload.id]: {
+            description: action.payload.description,
+            done: false
+          }
         }
       };
 
