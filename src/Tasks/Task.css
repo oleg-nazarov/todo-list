@@ -1,0 +1,9 @@
+.task-row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.font-style-italic {
+    font-style: italic;
+}
