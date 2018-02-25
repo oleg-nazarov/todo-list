@@ -49,6 +49,10 @@ class TaskCreatingPanel extends Component {
     const id = this.findFreeIndex();
 
     addTask(id, description);
+
+    this.setState({
+      description: ''
+    })
   }
 
   setError = (bool) => {
