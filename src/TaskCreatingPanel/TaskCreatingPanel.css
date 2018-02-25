@@ -3,10 +3,28 @@
     bottom: 0;
     padding-top: 2vh;
     background-color: white;
-    height: 18vh;
-    width: 62vw;
+    height: 120px;
+    width: 90vw;
 }
 
 .plus-icon {
     cursor: pointer;
+}
+
+@media screen and (min-width: 576px) {
+    .panel {
+        width: 79vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .panel {
+        width: 62vw;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .panel {
+        width: 46vw;
+    }
 }

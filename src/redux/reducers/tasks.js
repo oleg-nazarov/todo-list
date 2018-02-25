@@ -5,16 +5,7 @@ import {
 } from '../types/tasks';
 
 const initialState = {
-  list: {
-    1: {
-      description: 'Lorem ipsum dolores',
-      done: false
-    },
-    26: {
-      description: 'Per aspera ad astra',
-      done: true
-    }
-  }
+  list: {}
 };
 
 const tasks = (state = initialState, action) => {
