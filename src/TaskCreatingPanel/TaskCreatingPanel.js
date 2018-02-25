@@ -82,11 +82,11 @@ class TaskCreatingPanel extends Component {
 
     return (
       <div>
-        <div className="row">
-          <span
-            className="col-2 text-center"
+        <div className="row d-flex align-items-center">
+          <i
+            className="col-2 text-center material-icons"
             onClick={this.addTask}
-          >plus</span>
+          >add_box</i>
 
           <input
             className="col-10 form-control"

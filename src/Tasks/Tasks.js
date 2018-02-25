@@ -18,7 +18,9 @@ class Tasks extends Component {
           key={id}
           onClick={this.handleTaskOnClick(id)}
         >
-          <span className="col-2 text-center">{JSON.stringify(task.done)}</span>
+          <i className="col-2 text-center material-icons">
+            {task.done ? `check_box`: `check_box_outline_blank`}
+          </i>
           <span className="col-10">{task.description}</span>
         </div>
       ))

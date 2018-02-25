@@ -22,9 +22,12 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="d-flex justify-content-between flex-row bg-light">
-        <div>TODO list</div>
-        <div onClick={this.handleDeleteOnClick}>delete-button</div>
+      <div className="d-flex justify-content-between align-items-center bg-light">
+        <span>TODO list</span>
+        <i
+          className="material-icons"
+          onClick={this.handleDeleteOnClick}
+        >delete</i>
       </div>
     );
   }
