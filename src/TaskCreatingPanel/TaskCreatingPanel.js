@@ -42,11 +42,22 @@ class TaskCreatingPanel extends Component {
 
   addTask = () => {
     const { addTask } = this.props;
-    const {description } = this.state;
+    const { description } = this.state;
+
+    if (!this.isTextValid()) return;
 
     const id = this.findFreeIndex();
 
+
     addTask(id, description);
+  }
+
+  isTextValid = () => {
+    const { description } = this.state;
+
+    const textWithoutSpaces = description.replace(/\s/g, '');
+
+    return textWithoutSpaces.length > 2
   }
 
   render() {
