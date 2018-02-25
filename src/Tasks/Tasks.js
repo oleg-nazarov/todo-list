@@ -12,7 +12,11 @@ class Tasks extends Component {
   render() {
     const { list } = this.props;
 
-    return (
+    return _.isEmpty(list) ? (
+      <div className="d-flex justify-content-center align-items-center not-tasks-notification">
+        Вспомните нечто важное и создайте Вашу задачу!
+      </div>
+    ) : (
       _.map(list, (task, id) => (
         <div
           className="d-flex align-items-center row task-row"
