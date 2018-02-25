@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
+import './Header.css';
 
 class Header extends Component {
   handleDeleteOnClick = () => {
@@ -22,10 +23,10 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="d-flex justify-content-between align-items-center bg-light">
+      <div className="main d-flex justify-content-between align-items-center bg-light">
         <span>TODO list</span>
         <i
-          className="material-icons"
+          className="material-icons delete-button"
           onClick={this.handleDeleteOnClick}
         >delete</i>
       </div>

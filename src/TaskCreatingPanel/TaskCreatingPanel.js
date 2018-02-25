@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
+import './TaskCreatingPanel.css';
 
 class TaskCreatingPanel extends Component {
   constructor(props) {
@@ -81,7 +82,7 @@ class TaskCreatingPanel extends Component {
     const { description, isError } = this.state;
 
     return (
-      <div>
+      <div className="panel">
         <div className="row d-flex align-items-center">
           <i
             className="col-2 text-center material-icons"
