@@ -1,3 +1,7 @@
+.tasks-body {
+    height: calc(100vh - 215px);
+}
+
 .not-tasks-notification {
     margin-top: 20px;
     margin-bottom: 20px;

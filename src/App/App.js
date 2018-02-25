@@ -1,7 +1,7 @@
 import React from 'react';
-import { Header } from './Header/index';
-import { Tasks } from './Tasks/index';
-import { TaskCreatingPanel } from './TaskCreatingPanel/index';
+import { Header } from '../Header/index';
+import { Tasks } from '../Tasks/index';
+import { TaskCreatingPanel } from '../TaskCreatingPanel/index';
 import './App.css';
 
 const App = () => (
