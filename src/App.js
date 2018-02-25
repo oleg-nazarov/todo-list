@@ -7,7 +7,7 @@ import './App.css';
 const App = () => (
   <div className="container-fluid body">
     <div className="row justify-content-center">
-      <div className="col col-sm-10 col-md-8 col-lg-6">
+      <div className="col col-sm-10 col-md-8 col-lg-6 main">
         <Header />
         <Tasks />
         <TaskCreatingPanel />

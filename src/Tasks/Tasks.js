@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
-import './Task.css';
+import './Tasks.css';
 
 class Tasks extends Component {
   handleTaskOnClick = id => () => {

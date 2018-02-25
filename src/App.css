@@ -2,3 +2,7 @@
     font: 15px Arial;
     height: 100vh;
 }
+
+.main {
+    overflow: auto;
+}
