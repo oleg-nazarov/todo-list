@@ -1,23 +1,28 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import persistState, { mergePersistedState } from 'redux-localstorage';
+import adapter from 'redux-localstorage/lib/adapters/localStorage';
 import rootReducer from '../reducers/index';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
 const configureStore = (initialState) => {
-  const store = createStore(
-    rootReducer,
-    initialState,
-    composeEnhancers(applyMiddleware(thunk))
-  );
+  const reducer = compose(
+    mergePersistedState()
+  )(rootReducer, initialState, applyMiddleware(thunk))
 
-  //TODO delete comments
-  /*if (module.hot) {
+  const storage = adapter(window.localStorage);
+
+  const createPersistentStore = compose(
+    persistState(storage, 'state')
+  )(createStore);
+
+  const store = createPersistentStore(reducer);
+
+  if (module.hot) {
     module.hot.accept('../reducers', () => {
       const nextRootReducer = require('../reducers/index');
       store.replaceReducer(nextRootReducer)
     })
-  }*/
+  }
 
   return store
 };
