@@ -1,4 +1,5 @@
 import React from 'react';
+import ProptTypes from 'prop-types';
 import './Header.css';
 
 const Header = ({ deleteDoneTasks }) => (
@@ -10,5 +11,9 @@ const Header = ({ deleteDoneTasks }) => (
     >delete</i>
   </div>
 );
+
+Header.propTypes = {
+  deleteDoneTasks: ProptTypes.func.isRequired
+};
 
 export default Header;
