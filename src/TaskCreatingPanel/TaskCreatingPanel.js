@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as _ from 'lodash';
+import ProptTypes from 'prop-types';
 import './TaskCreatingPanel.css';
 
 class TaskCreatingPanel extends Component {
@@ -9,19 +9,6 @@ class TaskCreatingPanel extends Component {
       description: '',
       isError: false
     }
-  }
-
-  findFreeIndex = () => {
-    const { list } = this.props;
-
-    if (_.isEmpty(list)) return 1;
-
-    const keys = Object.keys(list)
-      .map(key => Number(key));
-
-    let lastId = keys.sort((a,b) => a < b)[0];
-
-    return lastId + 1;
   }
 
   handleInputChange = (event) => {
@@ -47,9 +34,7 @@ class TaskCreatingPanel extends Component {
       return;
     }
 
-    const id = this.findFreeIndex();
-
-    addTask(id, description);
+    addTask(description);
 
     this.setState({
       description: ''
@@ -107,5 +92,9 @@ class TaskCreatingPanel extends Component {
     );
   }
 }
+
+TaskCreatingPanel.propTypes = {
+  addTask: ProptTypes.func.isRequired
+};
 
 export default TaskCreatingPanel;

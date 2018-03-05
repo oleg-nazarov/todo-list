@@ -1,8 +1,12 @@
 import {
   TASK_TOGGLE_DONE,
   ADD_TASK,
-  UPDATE_LIST
+  DELETE_DONE_TASKS
 } from '../types/tasks';
+import {
+  deleteDoneTasks,
+  freeIdForNewTask
+} from '../../services';
 
 const initialState = {
   list: {}
@@ -24,21 +28,25 @@ const tasks = (state = initialState, action) => {
       };
 
     case ADD_TASK:
+      const id = freeIdForNewTask(state.list);
+
       return {
         ...state,
         list: {
           ...state.list,
-          [action.payload.id]: {
-            description: action.payload.description,
+          [id]: {
+            description: action.payload,
             done: false
           }
         }
       };
 
-    case UPDATE_LIST:
+    case DELETE_DONE_TASKS:
+      const newList = deleteDoneTasks(state.list);
+
       return {
         ...state,
-        list: action.payload
+        list: newList
       };
 
     default:
