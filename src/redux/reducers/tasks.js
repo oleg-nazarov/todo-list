@@ -3,6 +3,7 @@ import {
   ADD_TASK,
   DELETE_DONE_TASKS
 } from '../types/tasks';
+import deleteDoneTasks from '../../services/deleteDoneTasks';
 
 const initialState = {
   list: {}
@@ -36,9 +37,11 @@ const tasks = (state = initialState, action) => {
       };
 
     case DELETE_DONE_TASKS:
+      const newList = deleteDoneTasks(state.list);
+
       return {
         ...state,
-        list: action.payload
+        list: newList
       };
 
     default:
