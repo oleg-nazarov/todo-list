@@ -4,11 +4,11 @@ import './Header.css';
 
 class Header extends Component {
   handleDeleteOnClick = () => {
-    const { updateList, list } = this.props;
+    const { deleteDoneTasks, list } = this.props;
 
     const newList = this.deleteDoneTasks(list);
 
-    updateList(newList);
+    deleteDoneTasks(newList);
   }
 
   deleteDoneTasks = (list) => {

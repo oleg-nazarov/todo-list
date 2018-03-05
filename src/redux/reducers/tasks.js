@@ -1,7 +1,7 @@
 import {
   TASK_TOGGLE_DONE,
   ADD_TASK,
-  UPDATE_LIST
+  DELETE_DONE_TASKS
 } from '../types/tasks';
 
 const initialState = {
@@ -35,7 +35,7 @@ const tasks = (state = initialState, action) => {
         }
       };
 
-    case UPDATE_LIST:
+    case DELETE_DONE_TASKS:
       return {
         ...state,
         list: action.payload

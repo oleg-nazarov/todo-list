@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateList } from '../redux/actions/tasksActions'
+import { deleteDoneTasks } from '../redux/actions/tasksActions'
 import Header from './Header';
 
 const mapStateToProps = state => ({
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  updateList
+  deleteDoneTasks
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
