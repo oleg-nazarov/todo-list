@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
+import ProptTypes from 'prop-types';
 import './Tasks.css';
 
 class Tasks extends Component {
@@ -36,5 +37,16 @@ class Tasks extends Component {
     )
   }
 }
+
+Tasks.propTypes = {
+  list: ProptTypes.objectOf(
+    ProptTypes.shape({
+      description: ProptTypes.string.isRequired,
+      done: ProptTypes.bool
+    }).isRequired
+  ).isRequired,
+
+  taskToggleDone: ProptTypes.func.isRequired
+};
 
 export default Tasks;

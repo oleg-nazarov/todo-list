@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
+import ProptTypes from 'prop-types';
 import './TaskCreatingPanel.css';
 
 class TaskCreatingPanel extends Component {
@@ -107,5 +108,9 @@ class TaskCreatingPanel extends Component {
     );
   }
 }
+
+TaskCreatingPanel.propTypes = {
+  addTask: ProptTypes.func.isRequired
+};
 
 export default TaskCreatingPanel;
