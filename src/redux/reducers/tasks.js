@@ -3,7 +3,10 @@ import {
   ADD_TASK,
   DELETE_DONE_TASKS
 } from '../types/tasks';
-import deleteDoneTasks from '../../services/deleteDoneTasks';
+import {
+  deleteDoneTasks,
+  freeIdForNewTask
+} from '../../services';
 
 const initialState = {
   list: {}
@@ -25,12 +28,14 @@ const tasks = (state = initialState, action) => {
       };
 
     case ADD_TASK:
+      const id = freeIdForNewTask(state.list);
+
       return {
         ...state,
         list: {
           ...state.list,
-          [action.payload.id]: {
-            description: action.payload.description,
+          [id]: {
+            description: action.payload,
             done: false
           }
         }

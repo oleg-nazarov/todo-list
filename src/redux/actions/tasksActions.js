@@ -9,12 +9,9 @@ export const taskToggleDone = id => ({
   payload: id
 });
 
-export const addTask = (id, description) => ({
+export const addTask = description => ({
   type: ADD_TASK,
-  payload: {
-    id,
-    description
-  }
+  payload: description
 });
 
 export const deleteDoneTasks = () => ({
