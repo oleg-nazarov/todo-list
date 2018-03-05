@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
+import ProptTypes from 'prop-types';
 import './Header.css';
 
 class Header extends Component {
@@ -33,5 +34,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  deleteDoneTasks: ProptTypes.func.isRequired
+};
 
 export default Header;
